@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-poppins: var(--font-poppins);
+  --font-volkhov: var(--font-volkhov);
+  
+  --color-primary-orange: #F1A501;
+  --color-primary-coral: #DF6951;
+  --color-primary-red: #E17B77;
+  --color-brand-blue: #006380;
+  --color-brand-lightBlue: #61AABD;
+  --color-brand-navy: #181E4B;
+  --color-brand-body: #5E6282;
+  --color-brand-light: #F8F8F8;
+  --color-brand-cream: #FFF1DA;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #F1A501;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #DF6951;
+}
+
+/* Utility classes */
+.section-label {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #DF6951;
+}
+
+.section-title {
+  font-family: var(--font-volkhov), Georgia, serif;
+  font-weight: 700;
+  color: #181E4B;
+  line-height: 1.2;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #F1A501 0%, #DF6951 100%);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  font-family: var(--font-poppins), sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(223, 105, 81, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(223, 105, 81, 0.5);
+}
+
+.card-shadow {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* Decorative dot pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, #5E6282 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #F1A501 0%, #DF6951 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
